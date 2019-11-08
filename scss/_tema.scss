@@ -1,0 +1,799 @@
+﻿// This SASS file is for receiving variable settings "_variaveis.scss", but can be edited according to usage.
+
+* {
+	&:hover, &:focus {
+		@include transition(transform .15s);
+	}
+}
+
+body {
+	font-family: $bg-fontetipo;
+	color: $texto-cor;
+	background-color: $bg-cor;
+	background-image: url($bg-img);
+}
+
+h3, h4, h5, h6 {
+	font-family: $titulos-fontetipo;
+	font-size: $titulos-tamanho;
+	color: $titulos-cor;
+	text-transform: $titulos-text-transform;
+}
+
+h1 {
+	font-family: $h1-fontetipo;
+	font-size: $h1-tamanho;
+	color: $h1-cor;
+	text-transform: $h1-text-transform;
+}
+
+h2 {
+	font-family: $h2-fontetipo;
+	font-size: $h2-tamanho;
+	color: $h2-cor;
+	text-transform: $h2-text-transform;
+}
+
+h3 {
+	font-size: $h3-tamanho;
+}
+
+p {
+	font-size: $texto-tamanho;
+	line-height: $texto-espacamento-y;
+}
+
+a {
+	font-size: $texto-tamanho;
+	text-decoration: none;
+	color: $link-cor;
+
+	&:hover {
+		text-decoration: $link-decoracao;
+		color: $link-hover;
+	}
+}
+
+label {
+	font-size: $label;
+}
+
+.blockquote {
+	font-size: $citacao-tamanho;
+	color: $citacao-cor;
+	border-left: 4px solid lighten($citacao-cor,20%);
+	padding-left: 10px;
+	margin-left: 20px;
+
+	p {
+		font-size: 100%;
+		color: $citacao-cor;
+	}
+
+	footer {
+		color: lighten($citacao-cor,10%);
+	}
+}
+
+.erro {
+	font-size: $texto-pequeno;
+	color: $erro-cor;
+}
+
+.valido {
+	font-size: $texto-pequeno;
+	color: $valido-cor;
+}
+
+.btn {
+	color: $botao-texto-cor;
+	font-size: $botao-texto-tamanho;
+	background-color: $botao-cor;
+	margin-bottom: .5rem;
+
+	&:hover {
+		color: $botao-texto-cor-hover;
+		background-color: darken($botao-cor,12%);
+	}
+
+	&:focus {
+		box-shadow: none;
+		/*box-shadow: 0 0 0 0.2rem rgba($botao-cor, .3);*/ 
+	}
+
+	&:disabled {
+		color: $botao-texto-cor;
+		opacity: .30;
+	}
+
+	&.btn-outline {
+		color: $botao-cor;
+		border-color: $botao-cor;
+		background-color: transparent;
+
+		&:hover {
+
+			&:not(:disabled) {
+				color: $botao-texto-cor-hover;
+				border-color: $botao-cor;
+				background-color: $botao-cor;
+			}
+		}
+	}
+}
+
+.form-control { //CAMPOS DE TEXTO
+	font-size: $input-texto-tamanho;
+	color: $input-texto-cor;
+	border-color: $linhas-cor;
+	margin-bottom: 1rem;
+	background-color: $input-bg-cor;
+
+	&:focus {
+		color: $preto-cor;
+		border-color: $secundario-cor;
+		background-color: $bg-cor;
+		box-shadow: none;
+	}
+
+	&.form-erro {
+		border-color: $erro-cor;
+	}
+
+	&.form-valido {
+		border-color: $valido-cor;
+	}
+}
+
+.btn-group { //DROPDOWN DIVISÃO
+	.btn {
+		&:hover, &:focus {
+			&:not(.dropdown-toggle-split) {
+				cursor: default;
+				color: $botao-texto-cor;
+				background-color: $botao-cor;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.dropdown {
+	.dropdown-customizado {
+		color: $input-texto-cor;
+		padding-right: 32px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $linhas-cor;
+		cursor: pointer;
+		background-color: $branco-cor;
+		background-image: url($select-icone);
+		background-repeat: no-repeat;
+		background-size: 14px;
+		background-position: calc(100% - 8px) center;
+
+		@include aparencia(none);
+
+		&::after {
+			display: none;
+		}
+
+		&:hover, &:focus {
+			color: $preto-cor;
+			border-color: $secundario-cor;
+			background-color: $bg-cor;
+			background-image: url($select-icone-hover);
+			box-shadow: none;
+		}
+	}
+
+	i {
+		position: absolute;
+		top: 3px;
+		right: 5px;
+		font-size: 18px;
+
+		&::before {
+			font-weight: bold;
+		}
+	}
+}
+
+.dropdown-menu { //OPÇÕES ABRE AO CLICK
+	background-color: $branco-cor;
+
+	a {
+
+		&:hover {
+			color: $branco-cor;
+			background-color: $secundario-cor;
+		}
+	}
+}
+
+select {
+	&.btn {
+		height: 38px;
+		text-align: left;
+		color: $input-texto-cor;
+		padding-right: 32px;
+		border-color: $linhas-cor;
+		cursor: pointer;
+		background-color: $branco-cor;
+		background-image: url($select-icone);
+		background-repeat: no-repeat;
+		background-size: 14px;
+		background-position: calc(100% - 8px) center;
+		@include aparencia(none);
+
+		&:hover {
+			color: $preto-cor;
+			border-color: $secundario-cor;
+			background-color: $bg-cor;
+			background-image: url($select-icone-hover);
+
+			@include navegador(explore) {
+				background-image: none;
+			}
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+
+		.dropdown-item { //SELECT OPÇÕES ABRE AO CLICK
+			cursor: pointer;
+			background-color: $branco-cor;
+
+			&:focus, &:hover, &:active, &.active {
+				color: $branco-cor;
+				background-color: $secundario-cor;
+			}
+		}
+
+		@include navegador(explore) {
+			background-image: none;
+		}
+	}
+}
+
+input[type=range] { //Range slider
+	@include inputcontrole {
+		background-color: $secundario-cor;
+	}
+
+	@include inputlinha {
+		background-color: $linhas-cor;
+	}
+
+	@include inputlinhafocus {
+		background-color: $secundario-cor;
+	}
+}
+
+///////////copia para js capiturar CKECKOUT - RADIO//////////////////
+.copia-checkbox {
+	width: 22px;
+	height: 22px;
+	border: 2px solid;
+	border-color: $linhas-cor;
+	border-radius: .25rem;
+	background-color: $branco-cor;
+}
+
+.copia-checkbox-selecionado {
+	@extend .copia-checkbox;
+	color: $branco-cor;
+	border-color: $secundario-cor;
+	background-color: $secundario-cor;
+}
+
+.copia-checkbox-inativo {
+	@extend .copia-checkbox;
+	border-color: #dbdbdb;
+	background-color: #e9ecef;
+}
+////////////////////////////////////
+
+.custom-control-input { //CKECKOUT - RADIO - SWITCH
+	&:checked ~ .custom-control-label {
+		&::before {
+			color: $branco-cor;
+			border-color: $secundario-cor;
+			background-color: $secundario-cor;
+		}
+	}
+
+	&:focus ~ .custom-control-label {
+		&::before {
+			box-shadow: none;
+		}
+	}
+
+	&:disabled ~ .custom-control-label {
+		cursor: default !important;
+
+		&::before {
+			/*opacity: 0.3;
+			background-color: $input-bg-cor;
+			border-color: $linhas-cor;*/
+		}
+	}
+}
+
+.custom-radio {
+	.custom-control-label {
+		cursor: pointer;
+		line-height: 31px;
+		padding-left: 5px;
+
+		&::before {
+			height: 22px;
+			width: 22px;
+			border-radius: 100%;
+			border: 2px solid $neutras-cor6;
+		}
+	}
+
+	.custom-control-input {
+		cursor: pointer;
+
+		&:checked ~ .custom-control-label {
+			&::before {
+			}
+
+			&::after {
+				top: 1px;
+				left: -27px;
+				width: 29px;
+				height: 29px;
+			}
+		}
+	}
+}
+
+.custom-checkbox {
+	.custom-control-label {
+		cursor: pointer;
+		line-height: 31px;
+		padding-left: 5px;
+
+		&::before {
+			width: 1.4rem;
+			height: 1.4rem;
+			border: 2px solid $neutras-cor6;
+		}
+
+		&::after {
+			width: 1.3rem;
+			height: 1.3rem;
+			background: no-repeat 4px 3px;
+			background-size: 15px;
+		}
+	}
+}
+
+///////////copia para js capiturar switch //////////////////
+.copia-switch {
+	width: 52px;
+	height: 26px;
+	border: 0;
+	border-radius: 34px;
+	background-color: $neutras-cor7;
+	box-shadow: inset -1px 1px 3px 0 rgba(0,0,0,.3);
+
+	.switch-controle {
+		height: 22px;
+		width: 22px;
+		border-radius: 50%;
+		background-color: $secundario-cor;
+	}
+}
+
+.copia-switch-selecionado {
+	@extend .copia-switch;
+	background-color: $valido-cor;
+
+	.switch-controle {
+		background-color: $secundario-cor;
+	}
+}
+
+.copia-switch-inativo {
+	@extend .copia-switch;
+
+	.switch-controle {
+		background-color: #adb5bd;
+	}
+}
+//////////////////////////
+
+.custom-switch {
+	.custom-control-label {
+		cursor: pointer;
+		line-height: 31px;
+		padding-left: 25px;
+
+		&::before {
+			border-radius: 34px;
+			width: 52px;
+			height: 26px;
+			border: 0px;
+			outline: none;
+			background-color: $neutras-cor7;
+			box-shadow: inset -1px 1px 3px 0 rgba(0,0,0,.3);
+			@include transition(.4s);
+		}
+
+		&::after {
+			height: 22px;
+			width: 22px;
+			border-radius: 50%;
+			@include transition(.4s);
+		}
+	}
+
+	.custom-control-input {
+		&:checked ~ .custom-control-label {
+			&::after {
+				left: -20px;
+				@include transition(.4s);
+			}
+		}
+
+		&:checked ~ .custom-control-label {
+			&::before {
+				background-color: $complementares-cor3;
+			}
+		}
+
+		&:not(:disabled) ~ .custom-control-label {
+			&::after {
+				background-color: $secundario-cor;
+			}
+		}
+	}
+}
+
+/* BREADCRUMBS */
+.breadcrumb {
+	font-size: 13px;
+	margin-bottom: 10px;
+	padding: 0;
+	background-color: transparent;
+
+	li {
+		padding: 0rem 0.5rem;
+		margin-right: 5px;
+
+		&:first-child {
+			padding-left: 0px;
+
+			a {
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+				padding-left: 10px;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+
+		a {
+			font-size: 13px;
+			float: left;
+			height: 28px;
+			text-align: center;
+			padding: 4px 0px 0 15px;
+			position: relative;
+			margin: 0 -18px 0 0;
+			text-decoration: none;
+			color: $texto-cor;
+			background-color: $branco-cor;
+
+			&:after {
+				content: "";
+				border-top: 15px solid transparent;
+				border-bottom: 13px solid transparent;
+				border-left: 10px solid;
+				position: absolute;
+				right: -10px;
+				top: 0;
+				z-index: 1;
+				border-left-color: $branco-cor;
+			}
+
+			&:before {
+				content: "";
+				border-top: 15px solid transparent;
+				border-bottom: 13px solid transparent;
+				border-left: 10px solid;
+				position: absolute;
+				left: 0px;
+				top: 0;
+				padding: 0px 0px 0 0px;
+				border-left-color: $bg-cor;
+			}
+
+			&:hover {
+				color: $branco-cor;
+				background: $secundario-cor;
+
+				&:after {
+					border-left-color: $secundario-cor;
+				}
+			}
+		}
+
+		&.active {
+			float: left;
+			height: 28px;
+			text-align: center;
+			padding: 4px 10px 0 15px;
+			position: relative;
+			margin: 0 -18px 0 8px;
+			text-decoration: none;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			color: $neutras-cor4;
+			background-color: lighten($complementares-cor5,12%);
+
+			&:before {
+				content: "";
+				border-top: 15px solid transparent;
+				border-bottom: 13px solid transparent;
+				border-left: 10px solid;
+				position: absolute;
+				left: 0px;
+				top: 0;
+				padding: 0px 0px 0 0px;
+				border-left-color: $complementares-cor5;
+			}
+		}
+	}
+}
+
+
+/* PAGINAÇÃO */
+.pagination {
+	.page-item {
+		margin: 2px;
+
+		.page-link {
+			border-radius: 3px;
+			padding: 5px 15px;
+			color: $secundario-cor;
+			border-color: $secundario-cor;
+			background-color: transparent;
+
+			&:hover {
+				color: $botao-texto-cor;
+				border-color: $secundario-cor;
+				background-color: $secundario-cor;
+			}
+
+			&:focus {
+				box-shadow: none;
+			}
+
+			i {
+				font-size: 11px;
+
+				&::before {
+					font-weight: bold;
+				}
+			}
+		}
+
+		&.active {
+			.page-link {
+				color: $botao-texto-cor;
+				border-color: $secundario-cor;
+				background-color: $secundario-cor;
+			}
+		}
+
+		&.disabled {
+			.page-link {
+				color: #999; //defauld
+				border-color: #ced4da; //defauld
+				background-color: #e9ecef; //defauld
+			}
+		}
+	}
+}
+
+.table-responsive {
+	table {
+		font-size: 0.84rem;
+
+		&:not(.table) {
+			display: table;
+			width: 100%;
+			line-height: 20px;
+			color: $tabela-texto-cor;
+			border-width: 1px;
+			border-style: solid;
+			border-color: $tabela-borda-cor;
+			border-collapse: collapse;
+			margin-bottom: 1rem;
+			background-color: $tabela-cor;
+
+			tr {
+				&:nth-child(2n+2) {
+					background-color: $tabela-linha-cor;
+				}
+
+				th, td {
+					vertical-align: top;
+					border: 1px solid $tabela-borda-cor;
+					padding: .75rem;
+				}
+			}
+		}
+
+		th, td {
+			@include media(sm-abaixo) {
+				min-width: 100px;
+				padding: 0.35rem !important;
+			}
+		}
+	}
+}
+
+
+/* calendario */
+.datepicker.dropdown-menu {
+	border: 1px solid;
+	border-radius: 5px;
+	box-shadow: none;
+	margin-top: -5px;
+}
+
+.datepicker table tr td, .datepicker table tr th {
+	font-size: 14px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	font-weight: normal;
+	height: 28px;
+	padding: 5px 8px;
+	width: 32px;
+}
+
+.datepicker table tr td.active.active,
+.datepicker table tr td.today {
+	border: 0px;
+}
+
+.datepicker {
+	border-color: $linhas-cor !important;
+	background-color: lighten($bg-cor,10%);
+
+	table {
+		tr {
+			color: $secundario-cor;
+			background-color: $branco-cor !important;
+
+			td {
+				&:hover {
+					background-color: $bg-cor !important;
+				}
+			}
+		}
+	}
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td span.focused,
+.datepicker table tr td.today.active,
+.datepicker table tr td.today:active,
+.datepicker table tr td.today.focus,
+.datepicker table tr td.today:focus,
+.datepicker table tr td.today.active.focus,
+.datepicker table tr td.today.active:focus,
+.datepicker table tr td.today.active:hover,
+.datepicker table tr td.today.focus:active,
+.datepicker table tr td.today:active:focus,
+.datepicker table tr td.today:active:hover {
+	color: $branco-cor !important;
+	background-color: $secundario-cor !important;
+}
+
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active:active {
+	color: $branco-cor !important;
+	background-color: $primario-cor !important;
+}
+
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled.active:hover,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active.active:hover,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td.active.active.focus,
+.datepicker table tr td.active.active:focus,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.highlighted.active.focus,
+.datepicker table tr td.active.highlighted.active:focus,
+.datepicker table tr td.active.highlighted.active:hover,
+.datepicker table tr td.active.highlighted.focus:active,
+.datepicker table tr td.active.highlighted:active:focus,
+.datepicker table tr td.active.highlighted:active:hover,
+.datepicker table tr td.active.focus:active,
+.datepicker table tr td.active:active:focus,
+.datepicker table tr td.active:active:hover {
+	background-color: $primario-cor;
+	border-color: $primario-cor;
+	color: $branco-cor;
+}
+
+.date {
+	.icon-calendar {
+		font-size: 21px;
+		padding: .32rem .8rem 0 .8rem;
+		margin-bottom: 1rem;
+		border: 1px solid;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		border-right: 0;
+		cursor: pointer;
+		color: $input-texto-cor;
+		border-color: $linhas-cor;
+		background-color: $input-bg-cor;
+	}
+
+	&:hover {
+		.calendario {
+			border-color: $secundario-cor;
+		}
+
+		.icon-calendar {
+			color: $branco-cor;
+			border-color: $secundario-cor;
+			background: $secundario-cor;
+		}
+	}
+
+	.calendario {
+		width: calc(100% - 48px);
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+
+/* ICONES */
+.icones {
+	display: flex;
+	flex-wrap: wrap;
+
+	span {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 45px;
+		height: 45px;
+		border: 1px solid;
+		border-radius: 3px;
+		text-align: center;
+		margin: 5px;
+		cursor: pointer;
+		border-color: $linhas-cor;
+
+		&::before {
+			font-size: 24px;
+		}
+
+		&:hover {
+			color: $secundario-cor;
+			border-color: $secundario-cor;
+		}
+	}
+}

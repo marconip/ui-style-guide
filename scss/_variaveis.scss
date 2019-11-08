@@ -1,0 +1,102 @@
+﻿/*Configurações garais*/
+$primario-cor: #008b00;
+$primario-cor2: #005c00;
+$primario-cor3: #26ab1c;
+$primario-cor4: #72c568;
+
+$secundario-cor: #8b008b;
+$secundario-cor2: #5f0077;
+$secundario-cor3: #a90e97;
+$secundario-cor4: #c561b5;
+
+$complementares-cor: #F44336;
+$complementares-cor2: #FFC02F;
+$complementares-cor3: #8BC34A;
+$complementares-cor4: #CED4DA;
+$complementares-cor5: #F1F2F4;
+
+$neutras-cor: #444444;
+$neutras-cor2: #555555;
+$neutras-cor3: #666666;
+$neutras-cor4: #999999;
+$neutras-cor5: #BBBBBB;
+$neutras-cor6: #DBDBDB;
+$neutras-cor7: #F1F1F1;
+$neutras-cor8: #F9F9F9;
+
+$preto-cor: #000;
+$branco-cor: #FFF;
+
+$texto-cor: #263e5b;
+$texto-tamanho: 14px;
+$texto-espacamento-y: 1.5;
+$texto-pequeno: 14px;
+
+$titulos-fontetipo: 'opensans-semibold';
+$titulos-cor: #444444;
+$titulos-tamanho: 18px;
+$titulos-text-transform: none;
+
+$h1-fontetipo: 'opensans-bold';
+$h1-cor: #0066FF;
+$h1-tamanho: 30px;
+$h1-text-transform: uppercase;
+
+$h2-fontetipo: 'opensans-semibold';
+$h2-cor: #0066FF;
+$h2-tamanho: 24px;
+$h2-text-transform: none;
+
+$h3-tamanho: 20px;
+
+$citacao-tamanho: 1.25rem;
+$citacao-cor: ($secundario-cor);
+
+$link-cor: #1a68d1;
+$link-hover: #1451a4;
+$link-decoracao: underline;
+
+$botao-cor: ($secundario-cor);
+$botao-texto-cor: #fff;
+$botao-texto-cor-hover: #fff;
+$botao-texto-tamanho: 14px;
+
+$input-texto-cor: #999;
+$input-bg-cor: #fff;
+$input-texto-tamanho: 16px;
+
+$label: 14px;
+$linhas-cor: #CED4DA;
+$valido-cor: #8BC34A;
+$erro-cor: #f44336;
+
+$tabela-cor: #fff;
+$tabela-linha-cor: #f2f2f2;
+$tabela-borda-cor: #dee2e6;
+$tabela-texto-cor: #212529;
+
+$select-icone: "../img/seta-baixo.svg";
+$select-icone-hover: "../img/seta-baixo-hover.svg";
+
+$bg-fontetipo: 'opensans-regular';
+$bg-cor: #f1f2f4;
+$bg-img: "";
+
+
+//Responsive breakpoints
+$cellphone-up: 576px;
+$cellphone-down: 575.98px;
+$mobile-up: 768px;
+$mobile-down: 767.98px;
+$tablet-up: 992px;
+$tablet-down: 991.98px;
+$desktop-up: 1200px;
+$desktop-down: 1199.98px;
+
+
+//Fontes
+@include fontFace('opensans-light','../fontes-icones/open-sans/OpenSans-Light');
+@include fontFace('opensans-regular','../fontes-icones/open-sans/OpenSans-Regular');
+@include fontFace('opensans-semibold','../fontes-icones/open-sans/OpenSans-SemiBold');
+@include fontFace('opensans-bold','../fontes-icones/open-sans/OpenSans-Bold',normal, bold);
+@include fontFace('opensans-extrabold','../fontes-icones/open-sans/OpenSans-ExtraBold',normal, bold);

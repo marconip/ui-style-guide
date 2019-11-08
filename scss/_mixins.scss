@@ -1,0 +1,111 @@
+﻿@mixin fontFace($family,$src,$style: normal,$weight: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('#{$src}.ttf') format('truetype');
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+@mixin quebratexto {
+	word-wrap: break-word;
+	word-break: break-word;
+	white-space: -o-pre-wrap;
+	white-space: -moz-pre-wrap;
+}
+
+@mixin aparencia($aparencia) {
+	-webkit-appearance: $aparencia;
+	-ms-appearance: $aparencia;
+	appearance: $aparencia;
+}
+
+@mixin transition($transition) {
+	transition: $transition;
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+}
+
+@mixin rotacao($rotacao) {
+	::before {
+		transform: $rotacao;
+		-webkit-transition: $rotacao;
+		-moz-transition: $rotacao;
+		-ms-transition: $rotacao;
+		-o-transition: $rotacao;
+	}
+}
+
+@mixin inputcontrole {
+	&::-moz-range-thumb {
+		@content;
+	}
+
+	&::-webkit-slider-thumb {
+		@content;
+	}
+
+	&::-ms-slider-thumb {
+		@content;
+	}
+
+	&::-ms-thumb {
+		@content;
+	}
+}
+
+@mixin inputlinha {
+	&::-webkit-slider-runnable-track {
+		@content;
+	}
+
+	&::-moz-range-track {
+		@content;
+	}
+
+	&::-ms-fill-lower {
+		@content;
+	}
+
+	&::-ms-fill-upper {
+		@content;
+	}
+}
+
+@mixin inputlinhafocus {
+	&:focus {
+		&::-moz-range-track {
+			@content;
+		}
+
+		&::-webkit-slider-runnable-track {
+			@content;
+		}
+
+		&::-ms-fill-lower {
+			@content;
+		}
+
+		&::-ms-fill-upper {
+			@content;
+		}
+	}
+}
+
+@mixin navegador($navegadores...) {
+	@each $navegador in $navegadores {
+		@if $navegador == explore {
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+				@content;
+			}
+		}
+
+		@if $navegador == firefox {
+			@-moz-document url-prefix() {
+				@content;
+			}
+		}
+	}
+}
