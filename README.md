@@ -23,20 +23,28 @@ Automatically it will put the technical details in the "details" link
 
 
 <strong> Importance of UI Style Guide </strong><br/>
-Prevents errors against visual inconsistencies and interactions;<br/>
-Generates a mockup with interaction feedbacks (visual demo);<br/>
-Generates visual patterns and consistency guide;<br/>
-Generates documentation being reference for next interfaces to be developed;<br/>
-Ensures to generate all components needed for the project;<br/>
-Save time on front-end development using pre-made files;<br/>
-Helps in good use of Bootstrap;<br/>
-Helps integrate new members into the project.
+- Prevents errors against visual inconsistencies and interactions;<br/>
+- Generates a mockup with interaction feedbacks (visual demo);<br/>
+- Generates visual patterns and consistency guide;<br/>
+- Generates documentation being reference for next interfaces to be developed;<br/>
+- Ensures to generate all components needed for the project;<br/>
+- Save time on front-end development using pre-made files;<br/>
+- Helps in good use of Bootstrap;<br/>
+- Helps integrate new members into the project.
 
 
 <i>“Make it simple, but significant.”</i> –Don Draper <br/>
 
 <b>Screenshots</b>
 
-![screenshots](https://github.com/marconip/drawing-suggestions/blob/master/files/mobile-telas-375px.jpg)
+![screenshots](https://raw.githubusercontent.com/marconip/ui-style-guide/master/img/mob-desk.jpg)
+
+<b>Desktop</b>
+
+![screenshots](https://raw.githubusercontent.com/marconip/ui-style-guide/master/img/styleguide-tela-01.jpg)
+
+<b>Mobile</b>
+
+![screenshots](https://raw.githubusercontent.com/marconip/ui-style-guide/master/img/styleguide-tela-mobile.jpg)
 
 I hope you enjoy it
