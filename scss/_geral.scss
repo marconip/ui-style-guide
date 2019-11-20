@@ -82,8 +82,11 @@ body {
 }
 
 header {
-	background-image: url('../img/bg-topo.jpg');
+	/*background-image: url('../img/bg-topo.jpg');
 	background-position: left center;
+	background-repeat: no-repeat;
+	background-color: #ffcb44;*/
+	background: url(../img/bg-topo.jpg) top right #ffcb44 no-repeat;
 }
 
 h1 {
@@ -580,4 +583,85 @@ ul {
 
 .bg-neutras8 {
 	background-color: $neutras-cor8;
+}
+
+
+@media print {
+	footer {
+		display: none;
+	}
+
+	body {
+		margin: 0px;
+		padding: 0px;
+		background-color: transparent !important;
+	}
+
+	a {
+		text-decoration: none !important;
+	}
+
+	#manual {
+		a {
+			text-decoration: none !important;
+
+			&:after {
+				content: " (" attr(href) ") ";
+			}
+		}
+	}
+
+	.container-fluid {
+		page-break-before: always;
+		page-break-after: always;
+		border: 0px !important;
+		padding: 0;
+		background-color: transparent !important;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		height: 98vh;
+		margin: 0px;
+		padding: 0px;
+		background-image: none;
+
+		section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			div {
+				& + div {
+					margin-top: 60px;
+				}
+			}
+		}
+
+		nav {
+			display: none;
+		}
+	}
+
+	.blockquote {
+		border-top: 0px;
+		border-bottom: 0px;
+		border-right: 0px;
+	}
+
+	.img-cut {
+		width: auto;
+		height: auto;
+	}
+
+	.collapse:not(.show) {
+		display: block;
+	}
+
+	.breadcrumb {
+		padding: 10px;
+		margin: 0px;
+		background-color: #f1f2f4;
+	}
 }
